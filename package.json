@@ -13,5 +13,8 @@
     "PDF-UA"
   ],
   "author": "Paul Walter",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "jspdf": "^2.2.0"
+  }
 }
