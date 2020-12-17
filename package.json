@@ -1,0 +1,17 @@
+{
+  "name": "jspdftest",
+  "version": "1.0.0",
+  "description": "Just a test to see if jspdf can handle WCAG 2.1 ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "WCAG2.1",
+    "jsPDF",
+    "508",
+    "PDF-UA"
+  ],
+  "author": "Paul Walter",
+  "license": "ISC"
+}
