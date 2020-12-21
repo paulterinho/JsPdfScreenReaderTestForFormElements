@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <!--<script src="jspdf.node.min.js" type="application/javascript"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+    <script src="https://code.jquery.com/jquery-git.min.js"></script>
+    <script src="index.js" type="application/javascript"></script>
+</head>
+<body>
+    <!-- Everything within this will be used as the PDF document -->
+    <div id="customers">
+        <h1>PDF accessibility test</h1>
+        <h3>Will radio and checkboxes be rendered correctly?</h3>
+        <div>
+            JsPDF doesn't have Radio Button from HTML capabilities it seems. 
+            There is a list of supported elements, and radio buttons aren't part of it. 
+            <a href="https://stackoverflow.com/questions/52165222/generate-pdf-from-html-with-radio-buttons-and-checkboxes/52165639">Link to stackoverflow</a>
+        </div>
+            <div class="div-with-padding">
+                <div>Radios with values 0, 1, 2. Checked works.</div>
+                <input type="radio" name="radio-1-name" value="0" id="radio-1-0"/>
+                <label for="radio-1-0">Radio 1, value 0</label>
+                <input type="radio" name="radio-1-name" value="1" id="radio-1-1"/>
+                <label for="radio-1-1">Radio 1, value 1</label>
+                <input type="radio" name="radio-1-name" value="2" id="radio-1-2" checked="checked"/>
+                <label for="radio-1-2">Radio 1, value 2</label>
+            </div>
+
+            <div class="div-with-padding">
+                <div>Radios with values 1, 2. Checked does not work.</div>
+                <input type="radio" name="radio-2-name" value="1" id="radio-2-1" checked="checked"/>
+                <label for="radio-2-1">Radio 2, value 1</label>
+                <input type="radio" name="radio-2-name" value="2" id="radio-2-2"/>
+                <label for="radio-2-2">Radio 2, value 2</label>
+            </div>
+
+            <div class="div-with-padding">
+                <div>Radios with values 1, 0. Checked does not work on any value.</div>
+                <input type="radio" name="radio-3-name" value="1" id="radio-3-1"/>
+                <label for="radio-3-1">Radio 3, value 1</label>
+                <input type="radio" name="radio-3-name" value="0" id="radio-3-0" checked="checked"/>
+                <label for="radio-3-0">Radio 3, value 0</label>
+            </div>
+
+            <div class="div-with-padding">
+                <div>Radios with values one, two. Checked does not work.</div>
+                <input type="radio" name="radio-4-name" value="one" id="radio-4-one" checked="checked"/>
+                <label for="radio-4-one">Radio 4, value one</label>
+                <input type="radio" name="radio-4-name" value="two" id="radio-4-two"/>
+                <label for="radio-4-two">Radio 4, value two</label>
+            </div>
+
+            <div class="div-with-padding">
+                <div>Radios with values 0, 2, 1. Checked will only work on values 0 and 1.</div>
+                <input type="radio" name="radio-5-name" value="0" id="radio-5-0"/>
+                <label for="radio-5-0">Radio 5, value 0</label>
+                <input type="radio" name="radio-5-name" value="2" id="radio-5-2" checked="checked"/>
+                <label for="radio-5-2">Radio 5, value 2</label>
+                <input type="radio" name="radio-5-name" value="1" id="radio-5-1"/>
+                <label for="radio-5-1">Radio 5, value 1</label>
+            </div>
+
+            <div class="div-with-padding">
+                <input type="checkbox" name="check-1" id="check-1-id" checked="checked"/>
+                <label for="check-1-id">Checked checkbox</label>
+                <input type="checkbox" name="check-2" id="check-2-id"/>
+                <label for="check-2-id">Non-checked checkbox</label>
+            </div>
+        
+
+    </div>
+    <script type="text/javascript" src="index.js"></script>
+
+    <button onclick="javascript:demoFromHTML();">PDF</button>
+</body>
+</html>
